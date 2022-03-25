@@ -1,18 +1,14 @@
 package com.notifications.service;
 
 import com.notifications.model.Account;
-import org.apache.poi.ss.format.CellFormatType;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
-import org.apache.poi.ss.usermodel.RichTextString;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
 @Service
@@ -32,7 +28,7 @@ public class AccountsService {
         List<Account> accountList;
         Iterator<Row> rowIterator;
         Account account;
-        InputStream fis = this.getClass().getClassLoader().getResourceAsStream("modified_accounts.xlsx");
+        InputStream fis = this.getClass().getClassLoader().getResourceAsStream("account_holders_details.xlsx");
         //creating workbook instance that refers to .xlsx file
         XSSFWorkbook xssfWorkbook = new XSSFWorkbook(fis);
 
@@ -95,7 +91,7 @@ public class AccountsService {
         }
 
         absolutePath = new File(PATH).getAbsolutePath();
-        FileOutputStream os = new FileOutputStream(new File(absolutePath + "\\modified_accounts.xlsx"));
+        FileOutputStream os = new FileOutputStream(new File(absolutePath + "\\account_holders_details.xlsx"));
         xssfWorkbook.write(os);
         System.out.println("Writing on XLSX file Finished ...");
     }
