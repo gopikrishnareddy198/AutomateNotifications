@@ -36,10 +36,6 @@
      <th bgcolor="DodgerBlue">Email id</th>
    </tr>
 
-
-
-
-
    <c:forEach items="${accountsList}" var="account">
         <tr>
              <td bgcolor="LightGray"> ${account.serialNumber}</td>

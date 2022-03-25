@@ -114,8 +114,8 @@ public class GmailService implements IMailService {
     }
 
     //59 23 28-31 * *
-    //@Scheduled(cron = "0 10 23 L * ?")
-    @Scheduled(cron = "0 25 17 24 * ?")
+    @Scheduled(cron = "0 59 23 L * ?")
+    //@Scheduled(cron = "0 19 23 24 * ?")
     public List<Account> sendOverDraftAlerts() throws IOException {
         List<Account> accountList;
         List<Account> accountsWithOverDraftBalance;
